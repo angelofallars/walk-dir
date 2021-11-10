@@ -11,7 +11,7 @@ def main() -> int:
         os.chdir(os.path.abspath(pwd))
         if "PKGBUILD" in files:
             print(f"Executing 'makepkg --syncdeps' in {pwd} ...")
-            exit_status = os.system("makepkg --syncdeps")
+            exit_status = os.system("sudo -u nobody makepkg --syncdeps")
 
             if exit_status != 0:
                 checking_status = 1
